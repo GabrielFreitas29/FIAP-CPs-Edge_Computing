@@ -28,13 +28,7 @@ Os limites de luminosidade podem ser ajustados diretamente no código.
 
 ## Componentes Utilizados
 
-- Arduino (Uno, Nano ou similar)
-- Sensor LDR
-- 3 LEDs (verde, amarelo e vermelho)
-- 1 buzzer
-- Resistores
-- Protoboard
-- Jumpers
+AINDA PENDENTE
 
 ---
 
