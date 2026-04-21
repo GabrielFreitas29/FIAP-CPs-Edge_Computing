@@ -1,4 +1,4 @@
-# 📊 Sistema de Monitoramento de Luminosidade – Vinheria Agnello
+# 📊 Medição da luminosidade do ambiente
 
 ## 📌 Descrição do Projeto
 
