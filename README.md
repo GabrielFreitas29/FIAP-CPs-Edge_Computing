@@ -89,7 +89,7 @@ https://www.tinkercad.com/things/a6Kkqbhf3eS-monitoramento-vinheira?sharecode=eC
 
 ## 🔗 Repositório
 
-O código-fonte completo e os arquivos do projeto estão disponíveis em:
+Repositório com o readme:
 
 https://github.com/GabrielFreitas29/FIAP-CP1-Edge_Computing
 
