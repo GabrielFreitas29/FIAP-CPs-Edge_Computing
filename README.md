@@ -88,3 +88,12 @@ Os limites de luminosidade são definidos no código e podem ser ajustados confo
 - Utilize o Monitor Serial para visualizar os valores do sensor em tempo real  
 
 ---
+
+## 👥 Integrantes
+
+- **570881 · Gabriel Freitas da Silva Carvalho**  
+- **572892 · Erick Martins Picolo**  
+- **572171 · Guilherme Marcon Dantas**  
+- **569782 · Luiz Felipe Cardoso de Oliveira**  
+
+---
