@@ -1,4 +1,4 @@
-# 📊 Sistema de Monitoramento de Vinheria com Arduino
+                                                                                                                                                                        # 📊 Sistema de Monitoramento de Vinheria com Arduino
 
 ## 📝 Descrição do Projeto
 
@@ -66,7 +66,7 @@ Buzzer acionado.
 
 ## 🧠 Funcionamento do Código
 
-O código foi desenvolvido em C++ utilizando a Arduino IDE e as bibliotecas `LiquidCrystal_I2C` e `Wire` para controle do display LCD.
+O código foi desenvolvido utilizando o Arduino IDE e as bibliotecas `LiquidCrystal_I2C` e `Wire` para controle do display LCD. (no Tinkercad)
 
 ### Principais funcionalidades:
 - Leitura dos sensores analógicos
@@ -158,7 +158,7 @@ Atualização realizada a cada 5 segundos.
 
 ## 🔗 Simulação no Tinkercad
 
-https://www.tinkercad.com/things/a6Kkqbhf3eS-monitoramento-vinheira?sharecode=eC05ODI3YGTU5_Qs6p3BFJe7yhQFRCd8a08SgBKI6eI
+https://www.tinkercad.com/things/3UBnYi2Emj0-monitoramento-vinheira-cp-2/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard%2Fdesigns%2Fall
 
 ---
 
