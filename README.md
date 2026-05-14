@@ -158,13 +158,7 @@ Atualização realizada a cada 5 segundos.
 
 ## 🔗 Simulação no Tinkercad
 
-https://www.tinkercad.com/things/3UBnYi2Emj0-monitoramento-vinheira-cp-2/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard%2Fdesigns%2Fall
-
----
-
-## 🔗 Repositório do Projeto
-
-https://github.com/GabrielFreitas29/FIAP-CP1-Edge_Computing
+https://www.tinkercad.com/things/3UBnYi2Emj0-monitoramento-vinheira-cp-2/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard%2Fdesigns%2Fall&sharecode=8a5WZ7S5V4yVZX3xBJOEnjDlYGXDH7Ea2hV6H2wOJVc
 
 ---
 
