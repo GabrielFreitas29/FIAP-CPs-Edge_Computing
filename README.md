@@ -1,4 +1,4 @@
-                                                                                                                                                                        # 📊 Sistema de Monitoramento de Vinheria com Arduino
+# 📊 Sistema de Monitoramento de Vinheria com Arduino
 
 ## 📝 Descrição do Projeto
 
