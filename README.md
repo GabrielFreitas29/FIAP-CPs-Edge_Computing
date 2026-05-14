@@ -1,28 +1,85 @@
-# 📊 Medição da Luminosidade do Ambiente
+# 📊 Sistema de Monitoramento de Vinheria com Arduino
 
 ## 📝 Descrição do Projeto
 
-Este projeto consiste no desenvolvimento de um sistema de monitoramento de luminosidade para a **Vinheria Agnello**, utilizando a plataforma Arduino em conjunto com um sensor LDR (*Light Dependent Resistor*).
+Este projeto foi desenvolvido para a **Vinheria Agnello** com o objetivo de monitorar as condições ideais de armazenamento dos vinhos utilizando a plataforma Arduino.
 
-O objetivo é medir a intensidade de luz no ambiente e indicar, em tempo real, se as condições estão adequadas para a conservação dos vinhos, utilizando sinais visuais (LEDs) e sonoros (buzzer).
+O sistema realiza o monitoramento de:
+
+- 🌡️ Temperatura  
+- 💧 Umidade  
+- 💡 Luminosidade  
+
+As informações são exibidas em tempo real em um display LCD e o sistema utiliza LEDs e buzzer para alertar quando alguma condição está fora do padrão ideal para conservação dos vinhos.
 
 ---
 
 ## ⚙️ Funcionamento
 
-O sistema realiza a leitura da luminosidade através do sensor LDR e classifica o ambiente em três estados:
+O sistema faz leituras periódicas dos sensores conectados ao Arduino e classifica o ambiente de acordo com os limites definidos no código.
 
-- 🟢 **Condição adequada (ambiente escuro)**  
-  LED verde aceso  
+### 🌡️ Temperatura
+- Entre **10°C e 15°C** → condição ideal  
+- Abaixo de 10°C → temperatura baixa  
+- Acima de 15°C → temperatura alta  
 
-- 🟡 **Nível de alerta (luminosidade moderada)**  
-  LED amarelo aceso  
+### 💧 Umidade
+- Entre **50% e 70%** → condição ideal  
+- Abaixo de 50% → umidade baixa  
+- Acima de 70% → umidade alta  
 
-- 🔴 **Condição crítica (alta luminosidade)**  
-  LED vermelho aceso  
-  Buzzer acionado por 3 segundos  
+### 💡 Luminosidade
+- Ambiente escuro → condição ideal  
+- Alta luminosidade → condição inadequada para conservação dos vinhos  
 
-Os limites de luminosidade são definidos no código e podem ser ajustados conforme o ambiente.
+---
+
+## 🚦 Sinalização do Sistema
+
+### 🟢 LED Verde
+Indica que:
+- Temperatura está ideal  
+- Umidade está ideal  
+- Luminosidade está adequada  
+
+Buzzer desligado.
+
+---
+
+### 🟡 LED Amarelo
+Indica problema relacionado à:
+- Temperatura fora da faixa ideal  
+
+Buzzer acionado.
+
+---
+
+### 🔴 LED Vermelho
+Indica problema relacionado à:
+- Umidade fora da faixa ideal  
+ou
+- Luminosidade excessiva  
+
+Buzzer acionado.
+
+---
+
+## 🧠 Funcionamento do Código
+
+O código foi desenvolvido em C++ utilizando a Arduino IDE e as bibliotecas `LiquidCrystal_I2C` e `Wire` para controle do display LCD.
+
+### Principais funcionalidades:
+- Leitura dos sensores analógicos
+- Média de leituras para reduzir ruídos
+- Atualização automática a cada 5 segundos
+- Exibição das informações no display LCD
+- Acionamento automático dos LEDs e buzzer conforme o estado do ambiente
+- Exibição de dados no Monitor Serial
+
+### Sensores utilizados:
+- LDR → luminosidade
+- Sensor analógico → temperatura
+- Sensor analógico → umidade
 
 ---
 
@@ -30,84 +87,90 @@ Os limites de luminosidade são definidos no código e podem ser ajustados confo
 
 - 1x Arduino Uno  
 - 1x Sensor LDR  
+- 1x Sensor de temperatura analógico  
+- 1x Sensor de umidade analógico  
+- 1x Display LCD I2C 16x2  
 - 3x LEDs (verde, amarelo e vermelho)  
-- 3x Resistores (220Ω para os LEDs)  
-- 1x Resistor (10kΩ para o LDR)  
+- 3x Resistores 220Ω  
+- 1x Resistor 10kΩ  
 - 1x Buzzer  
 - 1x Protoboard  
-- Jumpers (fios de conexão)  
+- Jumpers  
 
 ---
 
 ## 🔌 Montagem do Circuito
 
-### Conexões:
+### Sensores
+- LDR → A0  
+- Temperatura → A1  
+- Umidade → A2  
 
-- **LDR:**
-  - Um lado no 5V  
-  - Outro lado no A0 e no resistor de 10kΩ  
-  - O resistor vai para o GND  
+### LEDs
+- LED Verde → Pino 10  
+- LED Amarelo → Pino 11  
+- LED Vermelho → Pino 12  
 
-- **LED Verde:**
-  - Pino 10 → resistor → LED → GND  
+### Buzzer
+- Pino 8  
 
-- **LED Amarelo:**
-  - Pino 11 → resistor → LED → GND  
-
-- **LED Vermelho:**
-  - Pino 12 → resistor → LED → GND  
-
-- **Buzzer:**
-  - Pino 8 → positivo  
-  - GND → negativo  
+### Display LCD I2C
+- SDA → A4  
+- SCL → A5  
+- VCC → 5V  
+- GND → GND  
 
 ---
 
 ## 💻 Dependências
 
-- Arduino IDE instalada  
+- Arduino IDE  
+- Bibliotecas:
+  - `LiquidCrystal_I2C`
+  - `Wire`
 
 ---
 
-## ▶️ Como Reproduzir o Projeto
+## ▶️ Como Executar o Projeto
 
 1. Instale a Arduino IDE  
-2. Monte o circuito conforme descrito acima ou no simulador (Tinkercad/Wokwi)  
-3. Conecte o Arduino ao computador via USB  
-4. Abra o código do projeto na IDE  
-5. Selecione a placa (Arduino Uno) e a porta correta  
+2. Monte o circuito na protoboard ou no simulador  
+3. Conecte o Arduino via USB  
+4. Abra o código do projeto  
+5. Selecione:
+   - Placa: Arduino Uno
+   - Porta correta
 6. Faça o upload do código  
-7. Observe os LEDs e o buzzer reagindo à luminosidade  
+7. Observe o funcionamento no LCD, LEDs e buzzer  
+
+---
+
+## 🧪 Monitor Serial
+
+O sistema também envia informações para o Monitor Serial, exibindo:
+- Luminosidade
+- Temperatura
+- Umidade
+
+Atualização realizada a cada 5 segundos.
 
 ---
 
 ## 🔗 Simulação no Tinkercad
 
-https://www.tinkercad.com/things/a6Kkqbhf3eS-monitoramento-vinheira?sharecode=eC05ODI3YGTU5_Qs6p3BFJe7yhQFRCd8a08SgBKI6eI    
+https://www.tinkercad.com/things/a6Kkqbhf3eS-monitoramento-vinheira?sharecode=eC05ODI3YGTU5_Qs6p3BFJe7yhQFRCd8a08SgBKI6eI
 
 ---
 
-## 🔗 Repositório
-
-Repositório com o readme:
+## 🔗 Repositório do Projeto
 
 https://github.com/GabrielFreitas29/FIAP-CP1-Edge_Computing
 
 ---
 
-## 🧪 Observações
-
-- Os valores de luminosidade podem variar no Tinkercad  
-- Caso necessário, ajuste os limites diretamente no código  
-- Utilize o Monitor Serial para visualizar os valores do sensor em tempo real  
-
----
-
 ## 👥 Integrantes
 
-- **570881 · Gabriel Freitas da Silva Carvalho**  
-- **572892 · Erick Martins Picolo**  
-- **572171 · Guilherme Marcon Dantas**  
-- **569782 · Luiz Felipe Cardoso de Oliveira**  
-
----
+- Gabriel Freitas da Silva Carvalho — RM 570881  
+- Erick Martins Picolo — RM 572892  
+- Guilherme Marcon Dantas — RM 572171  
+- Luiz Felipe Cardoso de Oliveira — RM 569782
